@@ -13,7 +13,7 @@
           <div class="swiper-wrapper">
             {% for item in service.services %}
             <div class="swiper-slide slider__item">
-              <a href="{{ item.service_link }}" class="slider__item-title">{{ item.service_title }}</a>
+              <a href="{{ item.service_link }}" class="slider__item-title">{{ item.service_title|raw }}</a>
               <p class="slider__item-description">{{ item.service_desc }}</p>
             </div>
             {% endfor %}

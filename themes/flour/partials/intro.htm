@@ -1,8 +1,8 @@
 <div class="intro section" style="background-image: url('{{ this.theme.image|media }}')">
   <div class="wrap intro__wrap">
     <div class="intro__content">
-      <div class="intro__subtitle">{{ this.theme.intro_subtitle }}</div>
-      <div class="intro__title title">{{ this.theme.intro_title }}</div>
+      <div class="intro__subtitle">{{ this.theme.intro_subtitle|raw }}</div>
+      <div class="intro__title title">{{ this.theme.intro_title|raw }}</div>
       <button type="button" class="button button_outline-red intro__button" data-js-action="open-modal" data-type-modal="message">Связаться с нами</button>
     </div>
   </div>
