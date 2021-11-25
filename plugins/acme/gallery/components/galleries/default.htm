@@ -1,0 +1,34 @@
+{% set gallery = __SELF__.gallery %}
+<section class="section gallery">
+  <div class="wrap gallery__wrap">
+    <div class="gallery__heading base-heading">
+      <h2 class="gallery__title base-title">{{ gallery.title }}</h2>
+    </div>
+    <div class="gallery__container">
+      <div class="gallery__box">
+        <div class="swiper gallery__swiper" data-js-slider="gallery-slider">
+          <div class="swiper-wrapper">
+            {% for image in gallery.gallery %}
+            {% set full = image.path %}
+            {% set poster = image.thumb(600, 400, {'mode': 'crop'}) %}
+            <div class="swiper-slide gallery__slide">
+              <a href="{{ full }}" class="gallery__slide-item" data-lightbox="roadtrip">
+                <img src="{{ poster }}" alt="{{ image.title ? image.title : image.disk_name }}" class="gallery__slide-img" />
+              </a>
+              {% if image.title %}
+              <div class="gallery__slide-heading">
+                <div class="gallery__slide-title">{{ image.title }}</div>
+                {% if image.description %}
+                <div class="gallery__slide-description">{{ image.description }}</div>
+                {% endif %}
+              </div>
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination gallery__pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

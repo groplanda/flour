@@ -1,0 +1,23 @@
+{% set answers = __SELF__.answers %}
+
+<div id="{{ __SELF__.id }}" class="questions__list">
+  {% for answer in answers %}
+  <div class="questions__list-item">
+    <div class="questions__list-head" data-question="head">
+      <div class="questions__list-title">
+        {{ answer.title }}
+        <svg xmlns="http://www.w3.org/2000/svg" class="questions__list-ico" fill="currentColor" class="bi bi-triangle-fill" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"/>
+        </svg>
+      </div>
+    </div>
+    <div class="questions__list-body hidden" data-question="body">
+      <div class="questions__list-text">
+        {{ answer.description|raw }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+

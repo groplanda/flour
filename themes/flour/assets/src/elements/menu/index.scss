@@ -1,0 +1,149 @@
+.menu {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 1030;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s ease;
+
+  $root: &;
+
+  &_open {
+    opacity: 1;
+    pointer-events: all;
+
+    #{$root} {
+      &__container {
+        transform: translateX(0);
+        transition: all .2s ease;
+      }
+    }
+  }
+
+  @media(min-width: 767px) {
+    display: none;
+  }
+
+
+  &__overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba($color: $black-color, $alpha: .7);
+    cursor: pointer;
+  }
+
+  &__container {
+    background: $white-color;
+    max-width: calc(100% - 50px);
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(-100%);
+    transition: all .3s ease .1s;
+    position: relative;
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__close-ico {
+    width: 100%;
+    height: 100%;
+    color: $black-color;
+    pointer-events: none;
+  }
+
+  &__container-scroll {
+    padding: 60px 5px;
+  }
+
+  &__nav {
+    margin-bottom: 20px;
+  }
+
+  &__nav-item {
+    margin-bottom: 10px;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.active {
+      #{$root} {
+        &__nav-dropdown {
+          height: auto;
+        }
+        &__nav-link {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &__nav-link {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: $black-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_red {
+      color: $red-color;
+    }
+
+    &:hover {
+      color: $red-color;
+      text-decoration: none;
+    }
+  }
+
+  &__nav-caret {
+    width: 12px;
+    margin-left: 5px;
+    fill: $white-color;
+  }
+
+  &__nav-dropdown {
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    transition: height .2s ease;
+  }
+
+  &__nav-sublink {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: $black-color;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

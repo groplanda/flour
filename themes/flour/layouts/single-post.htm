@@ -1,0 +1,26 @@
+description = "Single Post"
+
+[staticMenu mainMenu]
+code = "main-menu"
+
+[singlepost]
+==
+<!DOCTYPE html>
+<html lang="ru">
+  {% partial "meta" %}
+  <body>
+    <!-- contact-block -->
+    {% partial "header" %}
+
+    <!-- Content -->
+    <main class="main">
+      {% partial "main-menu" items=mainMenu.menuItems classname="start" %}
+      {% partial "breadcrumbs" list=[{title: 'Новости', url: 'posts'}] %}
+      {% component 'singlepost' %}
+    </main>
+    <!-- Footer -->
+    {% partial "footer" %}
+    {% partial "modals" %}
+    {% partial "scripts" %}
+  </body>
+</html>

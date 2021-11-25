@@ -1,0 +1,95 @@
+description = "Homepage"
+
+[services]
+serviceName = 1
+servicesType = "base"
+
+[advantage]
+advantageName = 1
+
+[services services2]
+serviceName = 2
+servicesType = "special"
+
+[galleries]
+galleryName = 1
+galleryType = "slider"
+
+[staticMenu mainMenu]
+code = "main-menu"
+
+[postlist]
+postType = "default"
+==
+<!DOCTYPE html>
+<html lang="ru">
+  {% partial "meta" %}
+  <body>
+    <!-- contact-block -->
+    {% partial "header" %}
+
+    <!-- Content -->
+    <main class="main">
+      {% partial "intro" %}
+      {% partial "main-menu" items=mainMenu.menuItems %}
+      {% component 'services' %}
+      <section class="section about">
+        <div class="wrap about__wrap">
+          <div class="about__heading base-heading">
+            <h1 class="about__title base-title">О нас</h1>
+          </div>
+          <div class="about__container">
+            <div class="about__body">
+              {% page %}
+            </div>
+            <button type="button" class="button button_outline-green about__button" data-js-action="open-modal" data-type-modal="message">Написать нам</button>
+            {% component 'advantage' %}
+          </div>
+        </div>
+      </section>
+      {% component 'postlist' %}
+      {% component 'services2' %}
+      {% partial "contact-block" %}
+      {% component 'galleries' %}
+      <section class="section form">
+        <div class="form__wrap wrap">
+          <div class="form__heading base-heading">
+            <h2 class="form__title base-title">Оставить заявку</h2>
+          </div>
+          <div class="form__container">
+            <div class="form__container-title">
+              Позвоните по нашим контактным телефонам или оставьте
+              заявку и мы обязательно договоримся с Вами о вывозе
+            </div>
+            <div class="form__phone">
+              <svg xmlns="http://www.w3.org/2000/svg" class="form__phone-icon" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
+                <path d="M15 7a2 2 0 0 1 2 2"></path>
+                <path d="M15 3a6 6 0 0 1 6 6"></path>
+              </svg>
+              {% if this.theme.phone|first.val %}
+              <a href="tel:{{ this.theme.phone|first.val }}" class="form__phone-value">{{ this.theme.phone|first.val }}</a>
+              {% endif %}
+            </div>
+            <form class="form__row" data-js-action="send-form">
+              <div class="form__group">
+                <input type="text" name="user_name" placeholder="* Ваше имя" class="form__group-input" />
+                <span class="form__grop-error" data-error-for="user_name"></span>
+              </div>
+              <div class="form__group">
+                <input type="text" name="user_phone" placeholder="* Телефон" class="form__group-input" data-js-action="phone-mask" />
+                <span class="form__grop-error" data-error-for="user_phone"></span>
+              </div>
+              <button type="submit" class="form__submit button button_primary">Отправить сообщение</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    {% partial "footer" %}
+    {% partial "modals" %}
+    {% partial "scripts" %}
+  </body>
+</html>

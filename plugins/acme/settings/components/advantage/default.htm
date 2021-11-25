@@ -1,0 +1,19 @@
+{% set advantage = __SELF__.advantages %}
+<div id="{{__SELF__.id}}" class="about__advantages">
+  <div class="about__advantages-row">
+    {% for row in advantage.advantages %}
+    <!-- start item -->
+    <div class="about__advantages-item">
+      <div class="about__advantages-box">
+        <img src="{{ row.a_ico|media }}" alt="{{ row.a_title }}" class="about__advantages-ico" />
+        <div class="about__advantages-group">
+          <div class="about__advantages-title">
+            {{ row.a_title }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end item -->
+    {% endfor %}
+  </div>
+</div>

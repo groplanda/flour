@@ -1,0 +1,35 @@
+[viewBag]
+==
+<div class="breadcrumbs section">
+  <div class="breadcrumbs__wrap wrap" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <div class="breadcrumbs__item" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <a itemprop="item" class="breadcrumbs__link" href="{{ url('/') }}">
+        <span itemprop="name">Главная</span>
+      </a>
+      <div class="breadcrumbs__hidden" itemprop="url" href="{{ url('/') }}"></div>
+      <meta itemprop="position" content="1" />
+      <svg width="10" height="6" class="breadcrumbs__arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.94207 2.85L7.7199 0.824504C7.65816 0.774358 7.59066 0.764709 7.51735 0.79558C7.44412 0.82649 7.40735 0.882393 7.40735 0.96345V2.25976H0.185181C0.131143 2.25976 0.0867528 2.27709 0.0520719 2.31181C0.0174114 2.34651 0 2.3909 0 2.4449V3.55598C0 3.60996 0.0173303 3.65435 0.0520517 3.68901C0.0868136 3.72371 0.131203 3.74104 0.18516 3.74104H7.40739V5.03732C7.40739 5.11459 7.44422 5.17049 7.51741 5.20511C7.59079 5.2361 7.65828 5.22439 7.72002 5.17049L9.94219 3.12173C9.98076 3.08318 10 3.03696 10 2.9829C10 2.93288 9.98064 2.88857 9.94207 2.85Z" fill="black"/>
+      </svg>
+    </div>
+    {% if list %}
+    {% for row in list %}
+    <div class="breadcrumbs__item" itemscope itemtype="https://schema.org/BreadcrumbList" >
+      <a itemprop="item" class="breadcrumbs__link" href="{{ url(row.url) }}">
+        <span itemprop="name">{{ row.title }}</span>
+      </a>
+      <div class="breadcrumbs__hidden" itemprop="url" href="{{ url(row.url) }}"></div>
+      <meta itemprop="position" content="1" />
+      <svg width="10" height="6" class="breadcrumbs__arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.94207 2.85L7.7199 0.824504C7.65816 0.774358 7.59066 0.764709 7.51735 0.79558C7.44412 0.82649 7.40735 0.882393 7.40735 0.96345V2.25976H0.185181C0.131143 2.25976 0.0867528 2.27709 0.0520719 2.31181C0.0174114 2.34651 0 2.3909 0 2.4449V3.55598C0 3.60996 0.0173303 3.65435 0.0520517 3.68901C0.0868136 3.72371 0.131203 3.74104 0.18516 3.74104H7.40739V5.03732C7.40739 5.11459 7.44422 5.17049 7.51741 5.20511C7.59079 5.2361 7.65828 5.22439 7.72002 5.17049L9.94219 3.12173C9.98076 3.08318 10 3.03696 10 2.9829C10 2.93288 9.98064 2.88857 9.94207 2.85Z" fill="black"/>
+      </svg>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div class="breadcrumbs__item" itemscope itemtype="https://schema.org/BreadcrumbList" >
+      <div itemprop="name" class="breadcrumbs__link">{{ this.page.title }}</div>
+      <div class="breadcrumbs__hidden" itemprop="item" itemprop="url" href="{{ url(this.page.url) }}"></div>
+      <meta itemprop="position" content="{{ list ? list|length + 2 : '2' }}" />
+    </div>
+  </div>
+</div>

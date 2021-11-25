@@ -1,0 +1,33 @@
+description = "Main item"
+
+[viewBag]
+==
+
+<nav class="section nav nav_{{ classname }}">
+  <div class="wrap nav__wrap">
+    {% for item in items %}
+    <div class="nav__item" {% if item.items %} data-js-action="dropdown" {% endif %}>
+      <a href="{{ item.url }}" class="nav__item-url{{ item.isActive ? ' nav__item-url_active' : '' }}">
+        {{ item.title }}
+        {% if item.items %}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="nav__item-caret" color="currentColor">
+          <g data-name="Layer 2">
+            <g data-name="arrow-ios-downward">
+              <rect width="24" height="24" opacity="0"/>
+              <path d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z"/>
+            </g>
+          </g>
+        </svg>
+        {% endif %}
+      </a>
+      {% if item.items %}
+      <div class="nav__dropdown">
+        {% for subitem in item.items %}
+        <a class="nav__dropdown-link" href="{{ subitem.url }}">{{ subitem.title }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</nav>

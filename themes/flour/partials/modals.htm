@@ -1,0 +1,56 @@
+
+==
+<div class="modal" id="modal">
+  <div class="modal__dialog" data-role="modal-close">
+
+
+    <div class="modal__popup" data-modal="message">
+      <button class="modal__popup-close" data-role="modal-close">
+        <svg class="modal__popup-cross" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.8023 1.19766L9 9M9 9L1.19765 16.8023M9 9L16.8023 16.8023M9 9L1.19765 1.19766" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="modal__popup-container">
+        <div class="title modal__title">Оставить заявку</div>
+        <form class="modal-form" data-js-action="send-form">
+          <div class="modal-form__group">
+            <input type="text" name="user_name" class="modal-form__input" placeholder="* Ваше имя" />
+            <span class="modal-form__error" data-error-for="user_name"></span>
+          </div>
+          <div class="modal-form__group">
+            <input type="text" name="user_phone" class="modal-form__input" placeholder="* Телефон" data-js-action="phone-mask" />
+            <span class="modal-form__error" data-error-for="user_phone"></span>
+          </div>
+          <div class="modal-form__group">
+            <input type="text" name="user_email" class="modal-form__input" placeholder="Email" />
+            <span class="modal-form__error" data-error-for="user_email"></span>
+          </div>
+          <div class="modal-form__group modal-form__group_last">
+            <textarea name="user_message" class="modal-form__input modal-form__input_text" placeholder="Сообщение"></textarea>
+            <span class="modal-form__error" data-error-for="user_message"></span>
+          </div>
+          <button type="submit" class="button button_primary modal-form__submit">Отправить сообщение</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal__popup" data-modal="message-success">
+      <button class="modal__popup-close" data-role="modal-close">
+        <svg class="modal__popup-cross" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.8023 1.19766L9 9M9 9L1.19765 16.8023M9 9L16.8023 16.8023M9 9L1.19765 1.19766" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="modal__popup-container">
+        <div class="modal__image">
+          <svg class="modal__image-ico" width="100" height="92" viewBox="0 0 100 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M45.8322 91.7681C20.5621 91.7681 0 71.2067 0 45.9367C0 20.6666 20.5621 0.104523 45.8322 0.104523C54.6194 0.104523 63.1687 2.60841 70.556 7.34993C72.0063 8.28374 72.4312 10.217 71.4974 11.6711C70.5605 13.1252 68.6311 13.5456 67.177 12.6125C60.8021 8.51643 53.4194 6.35433 45.8322 6.35433C24.0074 6.35433 6.24981 24.112 6.24981 45.9367C6.24981 67.7607 24.0074 85.5183 45.8322 85.5183C67.6561 85.5183 85.4138 67.7607 85.4138 45.9367C85.4138 44.6321 85.3512 43.3405 85.2307 42.0702C85.0643 40.3491 86.3224 38.824 88.0389 38.6577C89.7639 38.499 91.2844 39.7494 91.4515 41.466C91.5926 42.9369 91.6636 44.4284 91.6636 45.9367C91.6636 71.2067 71.1022 91.7681 45.8322 91.7681Z" fill="currentColor"/>
+            <path d="M51.0398 56.3528C50.2403 56.3528 49.44 56.0484 48.8319 55.4365L30.0825 36.6871C28.8618 35.4657 28.8618 33.4867 30.0825 32.266C31.3032 31.0453 33.2822 31.0453 34.5028 32.266L51.0444 48.8075L94.6633 5.18784C95.8847 3.96717 97.8637 3.96717 99.0844 5.18784C100.305 6.4085 100.305 8.3875 99.0844 9.60817L53.2522 55.4403C52.6396 56.0484 51.8401 56.3528 51.0398 56.3528Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="modal__subtitle" id="reset-success"></div>
+        <a href="#!" data-role="modal-close" class="button button_primary modal__button">Закрыть окно</a>
+      </div>
+    </div>
+
+  </div>
+</div>

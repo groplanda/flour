@@ -1,0 +1,26 @@
+description = "Menu item"
+
+[viewBag]
+==
+
+<div class="menu__nav">
+  {% for item in items %}
+  <div class="menu__nav-item{{ item.items ? ' menu__nav-item_dropdown' : '' }}" {% if item.items %} data-js-action="dropdown" {% endif %}>
+    <a href="#!" class="menu__nav-link">
+      {{ item.title }}
+      {% if item.items %}
+      <svg class="menu__nav-caret" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0.5L5 5.5L10 0.5H0Z" fill="currentColor"/>
+      </svg>
+      {% endif %}
+    </a>
+    {% if item.items %}
+    <div class="menu__nav-dropdown">
+      {% for subitem in item.items %}
+      <a class="menu__nav-sublink" href="{{ subitem.url }}">{{ subitem.title }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,6 @@
+name: Flour
+description: 'flour mill'
+author: bardinteam
+homepage: 'http://bardinteam.ru'
+code: ''
+form: 'config/fields.yaml'

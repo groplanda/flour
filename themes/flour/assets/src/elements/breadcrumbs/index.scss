@@ -1,0 +1,51 @@
+.breadcrumbs {
+  padding: 10px 0;
+
+  @media(min-width: 768px) {
+    padding: 20px 0;
+  }
+
+  $root: &;
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+
+    @media(min-width: 768px) {
+      margin-right: 15px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+
+      #{$root} {
+        &__link, &__link:hover {
+          font-weight: 500;
+          color: $red-color;
+        }
+      }
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    display: block;
+    margin-right: 8px;
+
+    @media(min-width: 768px) {
+      font-size: 16px;
+      line-height: 21px;
+      margin-right: 12px;
+    }
+
+    &:hover {
+      color: $red-color;
+      text-decoration: none;
+    }
+
+  }
+}

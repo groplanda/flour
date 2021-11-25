@@ -1,0 +1,81 @@
+.modal-form {
+
+  $root: &;
+
+  &__group {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+
+
+    &_last {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__input {
+    color: #000;
+    font-size: 14px;
+    line-height: 29px;
+    width: 100%;
+    display: block;
+    padding: 8px 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    @include placeholder($dark-color);
+
+    @media(min-width: 768px) {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+
+    &_error {
+      border-bottom-color: $red-color;
+    }
+
+    &_text {
+      resize: none;
+      line-height: 20px;
+      height: 80px;
+
+      @media(min-width: 768px) {
+        height: 100px;
+      }
+    }
+  }
+
+  &__error {
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 600;
+    color: $red-color;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+
+    @media(min-width: 768px) {
+      font-size: 13px;
+      line-height: 16px;
+    }
+
+    &.error-active {
+      opacity: 1;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    height: 44px;
+    border-radius: 40px;
+    font-size: 16px;
+
+    @media(min-width: 768px) {
+      height: 50px;
+      font-size: 18px;
+    }
+
+  }
+}

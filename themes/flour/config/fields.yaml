@@ -1,0 +1,146 @@
+tabs:
+  defaultTab: Контакты
+  lazy:
+      - Контакты
+      - Общие
+      - Заставка
+  paneCssClass:
+      0: first-tab
+      1: second-tab
+      2: third-tab
+  icons:
+      Контакты: icon-phone
+      Общие: icon-cogs
+      Заставка: icon-wrench
+  fields:
+      phone:
+          label: Телефон
+          span: storm
+          cssClass: col-md-6
+          tab: Контакты
+          type: repeater
+          prompt: Добавить
+          form:
+            fields:
+              val:
+                label: Номер
+                type: text
+                placeholder: '+79147580525'
+              text:
+                label: Доп. текст
+                type: text
+                placeholder: 'круглосуточно'
+      open:
+          label: График работы
+          span: storm
+          cssClass: col-md-6
+          tab: Контакты
+          type: repeater
+          prompt: Добавить
+          form:
+            fields:
+              val:
+                label: Заголовок
+                type: text
+                placeholder: 'Прием заявок'
+              text:
+                label: Описание
+                type: text
+                placeholder: 'Каждый день'
+
+      t_email:
+          type: email
+          label: E-mail
+          span: storm
+          cssClass: col-md-4
+          tab: Контакты
+          placeholder: 'example@mail.ru'
+      post_code:
+          type: text
+          label: Почтовый индекс
+          span: storm
+          cssClass: col-md-2
+          tab: Контакты
+          placeholder: '404100'
+      city:
+          type: text
+          label: Город
+          span: storm
+          cssClass: col-md-2
+          tab: Контакты
+          placeholder: 'г. Москва'
+      address:
+          type: text
+          label: Улица
+          span: storm
+          cssClass: col-md-4
+          tab: Контакты
+          placeholder: 'Полный адрес'
+      whatsapp:
+          type: text
+          label: WhatsApp
+          span: storm
+          cssClass: col-md-4
+          tab: Контакты
+          placeholder: '79147580525'
+      tg:
+          type: text
+          label: Telegram
+          span: storm
+          cssClass: col-md-4
+          tab: Контакты
+          placeholder:  https://t.me/channel
+      vk:
+          type: text
+          label: Вконтакте
+          span: storm
+          cssClass: col-md-4
+          tab: Контакты
+          placeholder: https://vk.com
+      instagram:
+        type: text
+        label: Instagram
+        span: storm
+        cssClass: col-md-4
+        tab: Контакты
+        placeholder: https://www.instagram.com
+
+      ymap:
+        label: "Код карты"
+        type: textarea
+        size: large
+        span: full
+        tab: Контакты
+
+      site_name:
+        type: text
+        label: Название сайта
+        default: OctoberCms
+        span: full
+        tab: Общие
+      site_logo:
+        label: Логотип
+        type: mediafinder
+        mode: image
+        imageWidth: 200
+        tab: Общие
+
+      intro_title:
+        type: text
+        label: Заголовок сайта
+        default:
+        span: auto
+        tab: Заставка
+
+      intro_subtitle:
+        type: text
+        label: Подзаголовок сайта
+        default:
+        span: auto
+        tab: Заставка
+      image:
+        label: Фоновая картинка
+        type: mediafinder
+        mode: image
+        imageWidth: 300
+        tab: Заставка

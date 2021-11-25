@@ -1,0 +1,33 @@
+description = "Page"
+[staticMenu mainMenu]
+code = "main-menu"
+
+==
+<!DOCTYPE html>
+<html lang="ru">
+  {% partial "meta" %}
+  <body>
+    <!-- contact-block -->
+    {% partial "header" %}
+
+    <!-- Content -->
+    <main class="main">
+      {% partial "main-menu" items=mainMenu.menuItems classname="start" %}
+      {% partial "breadcrumbs" %}
+      <section class="page section">
+        <div class="wrap page__wrap">
+          <div class="base-heading">
+            <h1 class="base-title page__base-title">{{ this.page.title }}</h1>
+          </div>
+          <div class="page__entry">
+            {% page %}
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    {% partial "footer" %}
+    {% partial "modals" %}
+    {% partial "scripts" %}
+  </body>
+</html>

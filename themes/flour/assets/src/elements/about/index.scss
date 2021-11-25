@@ -1,0 +1,190 @@
+.about {
+  padding-top: 50px;
+  background: linear-gradient(to bottom, $grey-color 37.5%, rgba(0, 0, 0, 0) 99.7%),
+              url('/themes/flour/assets/images/theme/land-bg.jpg') left 50% bottom -351px / 100% auto no-repeat fixed $grey-color;
+  position: relative;
+
+  @media(min-width: 768px) {
+    padding-top: 100px;
+  }
+
+  &__heading {
+    margin-bottom: 30px;
+
+    @media(min-width: 768px) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__title {
+    color: $white-color;
+  }
+
+  &__container {
+    @media(min-width: 768px) {
+      margin-left: 50px;
+    }
+
+    @media(min-width: 992px) {
+      margin-left: 100px;
+    }
+
+    @media(min-width: 1199px) {
+      margin-left: 150px;
+    }
+  }
+
+  &__body {
+    margin-bottom: 20px;
+
+    @media(min-width: 768px) {
+      margin-bottom: 60px;
+    }
+
+    color: $white-color;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+
+    @media(min-width: 768px) {
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    p {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: $green-color;
+    }
+
+    strong, bold {
+      font-weight: 600;
+    }
+  }
+
+  &__button {
+    width: 180px;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 16px 0;
+    position: relative;
+    z-index: 1;
+
+    @media(min-width: 768px) {
+      width: 200px;
+      font-size: 16px;
+      padding: 21px 0;
+    }
+  }
+
+  &__advantages {
+    background: $white-color;
+    padding: 30px 20px;
+    position: relative;
+    border: 1px solid $red-color;
+    box-shadow: $shadow-lg;
+    transform: translateY(120px);
+    margin: -40px -15px 0;
+
+    @media(min-width: 768px) {
+      padding: 30px 20px 30px 35px;
+      border: 0;
+      border-left: 8px solid $red-color;
+      margin-left: 0;
+      margin-right: 0;
+      transform: translateY(160px);
+    }
+
+    @media(min-width: 992px) {
+      padding: 50px 50px 50px 65px;
+      border-left: 10px solid $red-color;
+    }
+  }
+
+  &__advantages-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  &__advantages-item {
+    width: 100%;
+
+    @media(min-width: 768px) {
+      width: 50%;
+    }
+  }
+
+  &__advantages-box {
+    padding: 20px 0;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 50px;
+    background: url('/themes/flour/assets/images/theme/decoration.png') left 50% top 15px / 80px no-repeat,
+                url('/themes/flour/assets/images/theme/circle.svg') left 50% top 5px / 12px no-repeat;
+
+    @media(min-width: 768px) {
+      flex-direction: row;
+      padding: 20px 0;
+      margin: 0 15px;
+      background-position: left -30px top 50%, left 5px top 18px;
+      background-size: 100px, 15px;
+    }
+
+    @media(min-width: 992px) {
+      padding: 30px 0;
+      margin: 0 40px;
+      background-position: left -34px top 50%, left 3px top 25px;
+      background-size: 122px, 17px;
+    }
+  }
+
+  &__advantages-ico {
+    width: 50px;
+    margin-bottom: 20px;
+    display: flex;
+
+    @media(min-width: 768px) {
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
+
+    @media(min-width: 992px) {
+      margin-right: 60px;
+    }
+  }
+
+  &__advantages-group {
+    flex: 1 1;
+  }
+
+  &__advantages-title {
+    max-width: 200px;
+    color: $dark-color;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    text-align: center;
+
+    @media(min-width: 768px) {
+      max-width: 100%;
+      font-size: 18px;
+      line-height: 21px;
+      text-align: left;
+    }
+
+    @media(min-width: 992px) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+}
