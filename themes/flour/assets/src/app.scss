@@ -237,12 +237,17 @@ svg {
 
 .table {
   width: 100%;
+  min-width: 768px;
   margin-bottom: 1rem;
   color: $black-color;
   vertical-align: top;
   border-color: $border-color;
   border-spacing: 0;
   border-top: 1px solid $border-color;
+
+  @media(min-width: 768px) {
+    min-width: auto;
+  }
 
   tr, td, thead, tbody {
     border-color: inherit;
@@ -262,10 +267,10 @@ svg {
     padding: 10px 8px;
     border-width: 1px;
     border-top: 0;
-    border-left: 0;
+    border-right: 0;
 
-    &:first-child {
-      border-left: 1px solid $border-color;
+    &:last-child {
+      border-right: 1px solid $border-color;
     }
   }
 }

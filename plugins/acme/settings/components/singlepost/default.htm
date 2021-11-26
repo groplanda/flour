@@ -4,9 +4,9 @@
       <h1 class="base-title page__base-title">{{ post.name }}</h1>
     </div>
     {% if post.date %}
-    <div class="page__contact-text">{{ post.date|date("d.m.Y") }}г.</div>
+    <div class="page__post-date">{{ post.date|date("d.m.Y") }}г.</div>
     {% endif %}
-    <div class="page__entry">
+    <div class="page__entry page__entry_post">
       {{ post.description|raw }}
     </div>
     {% if post.images|length > 0 %}

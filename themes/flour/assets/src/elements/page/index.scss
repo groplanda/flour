@@ -35,6 +35,9 @@
   }
 
   &__entry {
+    ul {
+      margin-bottom: 20px;
+    }
     p, li {
       font-size: 16px;
       line-height: 21px;
@@ -154,6 +157,19 @@
     @media(min-width: 768px) {
       height: 400px;
       border-radius: 20px;
+    }
+  }
+
+  &__post-date {
+    font-size: 14px;
+    line-height: 20px;
+    color: $red-color;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+    @media(min-width: 768px) {
+      font-size: 16px;
+      margin-bottom: 12px;
     }
   }
 

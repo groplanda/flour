@@ -5,7 +5,7 @@
       <div class="post__row-item">
         <div class="post__row-item-image">
           <div class="post__row-item-inner">
-            <img src="{{ post.poster|media|resize(false, 200, { mode: 'crop', quality: '85' }) }}" alt="{{ post.name }}" class="post__row-item-src" />
+            <img src="{{ post.poster|media|resize(405, 218, { mode: 'crop', quality: '85' }) }}" alt="{{ post.name }}" class="post__row-item-src" />
           </div>
         </div>
         <a href="{{ 'post'|page({ id: post.id }) }}" class="post__row-item-title">{{ post.name }}</a>
