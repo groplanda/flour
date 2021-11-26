@@ -6,7 +6,7 @@ description = "Menu item"
 <div class="menu__nav">
   {% for item in items %}
   <div class="menu__nav-item{{ item.items ? ' menu__nav-item_dropdown' : '' }}" {% if item.items %} data-js-action="dropdown" {% endif %}>
-    <a href="#!" class="menu__nav-link">
+    <a href="{{ item.url }}" class="menu__nav-link">
       {{ item.title }}
       {% if item.items %}
       <svg class="menu__nav-caret" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
