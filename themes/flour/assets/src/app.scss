@@ -264,13 +264,22 @@ svg {
   }
 
   td, th {
-    padding: 10px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+    padding: 8px 6px;
     border-width: 1px;
     border-top: 0;
     border-right: 0;
 
     &:last-child {
       border-right: 1px solid $border-color;
+    }
+
+    @media(min-width: 768x) {
+      padding: 10px 8px;
+      font-size: 16px;
+      line-height: 19px;
     }
   }
 }
