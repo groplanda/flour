@@ -237,7 +237,6 @@ svg {
 
 .table {
   width: 100%;
-//   min-width: 768px;
   margin-bottom: 1rem;
   color: $black-color;
   vertical-align: top;
@@ -245,9 +244,13 @@ svg {
   border-spacing: 0;
   border-top: 1px solid $border-color;
 
-//   @media(min-width: 768px) {
-//     min-width: auto;
-//   }
+  &_responsive {
+    min-width: 480px;
+
+    @media(min-width: 768px) {
+      min-width: auto;
+    }
+  }
 
   tr, td, thead, tbody {
     border-color: inherit;
